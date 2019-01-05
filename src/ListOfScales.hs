@@ -11,3 +11,21 @@ major = [whole, whole, half, whole, whole, whole, half]
 
 minor :: [Int]
 minor = [whole, half, whole, whole, half, whole, whole]
+
+harmonicMinor :: [Int]
+harmonicMinor = [whole, half, whole, whole, half, whole + half, half]
+
+dorian :: [Int]
+dorian = [whole, half, whole, whole, whole, half, whole]
+
+phrygian :: [Int]
+phrygian = [half, whole, whole, whole, half, whole, whole]
+
+lydian :: [Int]
+lydian = [whole, whole, whole, half, whole, whole, half]
+
+mixolydian :: [Int]
+mixolydian = [whole, whole, half, whole, whole, half, whole]
+
+locrian :: [Int]
+locrian =  [half, whole, whole, half, whole, whole, whole]

@@ -47,8 +47,14 @@ rotateList n xs = zipWith const (drop n (cycle xs)) xs
 shiftNotes :: String ->  [String]
 shiftNotes n = rotateList (fromJust(elemIndex n notes)) notes
 
+-- Used to generate Scales
+-- e.g. scale "C" major = [Just "C",Just "D",Just "E",Just "F",Just "G",Just "A",Just "B",Just "C"]
+
 scale :: String -> [Int] -> [Maybe String]
 scale n key = makeScale' (shiftNotes n) key
+
+-- Used to remove the maybe wrapper for scales
+-- e.g. scale' "C" major = ["C","D","E","F","G","A","B","C"]
 
 scale' :: String -> [Int] -> [String]
 scale' n key = catMaybes(scale n key)
