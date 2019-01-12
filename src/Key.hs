@@ -22,6 +22,17 @@ printAllOfKey note = do
 
 -- Prints all scales in the list of scales in every key
 
-printAllScales :: [[[String]]]
-printAllScales = [printAllOfKey x | x <- notes]
+allScales :: [String] -> [[[String]]]
+allScales [] = []
+allScales (x:xs) = printAllOfKey x : allScales xs
 
+-- Filter Time
+
+-- Only print scales containing a certain note
+-- Usage: filterScale "C" -> List of Scales
+filterScale :: String -> [[[String]]]
+filterScale note =  map (filter (note `elem`))(allScales notes)
+
+-- Same as above but remove duplicates
+tidyFilterScale :: String -> [[[String]]]
+tidyFilterScale note = nub (filterScale note)
