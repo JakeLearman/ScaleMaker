@@ -29,3 +29,6 @@ mixolydian = [whole, whole, half, whole, whole, half, whole]
 
 locrian :: [Int]
 locrian =  [half, whole, whole, half, whole, whole, whole]
+
+listOfScales :: [[Int]]
+listOfScales = [major, minor, harmonicMinor, dorian, phrygian, lydian, mixolydian, locrian]
