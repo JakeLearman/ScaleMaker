@@ -5,12 +5,15 @@ import Scale
 import ListOfScales
 
 printAllOfType :: [Int] -> [[String]]
-printAllOfType key = do
-        [scale' x key | x <- notes]
+printAllOfType scaleType = do
+        [scale' x scaleType | x <- notes]
 
 tidyPrintAllOfType :: [Int] -> [[String]]
-tidyPrintAllOfType key = nub (printAllOfType key)
+tidyPrintAllOfType scaleType = nub (printAllOfType scaleType)
 
 printAllOfKey :: String -> [[String]]
 printAllOfKey note = do
         [scale' note x | x <- listOfScales]
+
+printAllScales :: [[[String]]]
+printAllScales = [printAllOfKey x | x <- notes]
